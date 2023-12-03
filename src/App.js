@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Grid,
@@ -7,7 +7,6 @@ import {
   DialogContent,
   DialogTitle,
   Button,
-  Switch,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { DatePicker } from "@mui/x-date-pickers";
@@ -43,7 +42,7 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(null); // holds the date we picked on the datepicker
   const [openModal, setOpenModal] = useState(false); // track if the modal is open
 
-  const [lookForLiveData, setLookForLiveData] = useState(false); // do we need to go look for live data?
+  //const [lookForLiveData, setLookForLiveData] = useState(false); // do we need to go look for live data?
 
   const darkTheme = createTheme({
     palette: {
@@ -120,7 +119,8 @@ function App() {
     if (selectedDate && latestDate && selectedDate.isAfter(latestDate)) {
       console.log("we will use live data");
       setOpenModal(true);
-      const response = await axios
+      // const response = await axios
+      await axios
         .get(
           baseAPIURL +
             `/liveData/borough/${selectedBorough}/${selectedYear}/${selectedMonth}`
@@ -132,7 +132,8 @@ function App() {
         });
     } else {
       console.log("we will use historic data");
-      const response = await axios
+      // const response = await axios
+      await axios
         .get(
           baseAPIURL +
             `/historic/borough/${selectedBorough}/${selectedYear}/${selectedMonth}`
