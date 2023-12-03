@@ -27,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start --passWithNoTests",
+    "start": "node_modules/react-scripts/bin/react-scripts.js start --passWithNoTests",
     "build": "react-scripts build --passWithNoTests",
     "eject": "react-scripts eject"
   },
