@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Container,
+  Checkbox,
   Grid,
   Typography,
   Dialog,
@@ -33,6 +34,7 @@ import Footer from "./components/navbars/Footer";
 
 const baseAPIURL =
   "http://webapp-uhi-msc-19000170-webservices.azurewebsites.net";
+// const baseAPIURL = "http://localhost:8080";
 
 function App() {
   const [boroughs, setBoroughs] = useState([]); // this stores the list of boroughs
@@ -174,6 +176,8 @@ function App() {
                     ))}
                   </Select>
                 </div>
+
+                {/* <Checkbox /> */}
 
                 {selectedBorough.length > 0 && (
                   <>

@@ -1,0 +1,17 @@
+#modal-title,
+#modal-description {
+  color: #fff;
+}
+
+#dataTable,
+td {
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+  padding: 1px 3px;
+}
+
+.alert {
+  background-color: red;
+  color: #fff;
+  font-weight: bolder;
+}
