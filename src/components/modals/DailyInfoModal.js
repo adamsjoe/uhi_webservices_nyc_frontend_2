@@ -86,7 +86,7 @@ const DailyInfoModal = ({ open, onClose, clickedData, maxTemp, minTemp }) => {
     >
       <div className="modal-container">
         <Typography id="modal-title" variant="h3">
-          Informations for {clickedData.COLLISION_DATE}
+          Information for {clickedData.COLLISION_DATE}
           <hr />
         </Typography>
         <Typography id="modal-description" sx={{ mt: 2 }}>
