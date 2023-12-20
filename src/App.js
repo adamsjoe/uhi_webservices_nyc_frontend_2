@@ -76,6 +76,15 @@ function App() {
     last: latestDate,
   };
 
+  const [year, month, day] = new Date()
+    .toISOString()
+    .substring(0, 10)
+    .split("-");
+  console.log(year);
+  console.log(month);
+  const thisMonth = year + "/" + month;
+  console.log(thisMonth);
+
   // update the date whenever selectedDate changes
   useEffect(() => {
     console.log(`selectedDate has changed to: ${selectedDate}`);
@@ -152,7 +161,7 @@ function App() {
         <CssBaseline />
         <Container maxWidth="x1">
           <Typography variant="h4" gutterBottom>
-            <div className="heading">New York Accident Data visualiser</div>
+            <div className="heading">Accident Data visualiser</div>
             <hr></hr>
           </Typography>
 
@@ -187,6 +196,7 @@ function App() {
                         views={["year", "month"]}
                         label="Month and Year"
                         minDate={dayjs(earliestDate)}
+                        maxDate={dayjs(thisMonth)}
                         value={selectedDate}
                         onChange={handleDateChange}
                         renderInput={(params) => (
